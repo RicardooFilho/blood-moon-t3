@@ -34,7 +34,11 @@ Tema escuro em preto e vermelho neon para o [T3 Code](https://github.com/pingdot
 - **Computador e web.** O app do celular não usa temas personalizados.
 - **Menos movimento.** Se o sistema estiver com "reduzir movimento" ou "efeitos de animação" desligados, tudo fica parado.
 - **Sem internet.** As cenas são SVGs dentro do próprio CSS; nada é baixado.
-- **Partes que podem quebrar numa atualização.** O destaque da conversa aberta, o efeito ao passar o mouse nas linhas da barra lateral e os nomes dos projetos em maiúsculas usam atributos internos do T3 Code (`data-sidebar-row` e `aria-current`), fora da lista de seletores garantidos para temas. O resto usa só os seletores garantidos.
+- **Partes que podem quebrar numa atualização.** Algumas partes usam atributos internos do T3 Code, fora da lista de seletores garantidos para temas:
+  - o destaque da conversa aberta, o efeito ao passar o mouse nas linhas da barra lateral e os nomes dos projetos em maiúsculas (`data-sidebar-row` e `aria-current`);
+  - a cena no painel principal (`data-slot="sidebar-inset"`), que faz ela aparecer também na conversa nova, antes da primeira mensagem.
+
+  O resto usa só os seletores garantidos.
 
 ## Como mexer
 

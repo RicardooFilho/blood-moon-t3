@@ -1,8 +1,20 @@
-/* Fundo da conversa: cena "Lua de sangue" (SVG em pixel art com animações dentro) */
-.dark [data-workspace-area="conversation"] {
-  background: linear-gradient(rgba(5,2,3,.42), rgba(5,2,3,.58)), url("data:image/svg+xml,__SCENE__") center bottom / cover no-repeat #050203 !important;
+/* Fundo da conversa: cena "Lua de sangue" (SVG em pixel art com animações dentro).
+   A cena fica numa variável para ser usada em dois lugares sem repetir os ~40 mil caracteres. */
+:root {
+  --bm-scene: linear-gradient(rgba(5,2,3,.42), rgba(5,2,3,.58)), url("data:image/svg+xml,__SCENE__") center bottom / cover no-repeat #050203;
 }
-.dark [data-workspace-area="conversation"] .messages-timeline-scroll { background: transparent !important; }
+/* A cena fica no painel principal (onde está a caixa de mensagem), para aparecer também na conversa
+   nova e vazia. As camadas com fundo sólido entre o painel e a caixa de mensagem ficam transparentes. */
+/* A tela de conversa nova não usa o mesmo formulário da conversa, então o painel recebe a cena sempre,
+   menos nas configurações; as camadas transparentes são as que levam à caixa de mensagem (qualquer uma). */
+.dark [data-slot="sidebar-inset"]:not(:has([data-settings-page-scroll])) { background: var(--bm-scene) !important; }
+.dark [data-slot="sidebar-inset"] :is(div, section, main):has([data-chat-composer-form], [data-slot="composer-host"], .composer-tiptap, [data-workspace-area="conversation"]),
+.dark [data-workspace-area="conversation"] { background: transparent !important; }
+/* Conversa nova (sem mensagens): uma camada escura dentro da área da conversa cobre a cena.
+   Só nesse caso, tudo ali dentro fica sem fundo, menos a caixa de mensagem, o cartão de detalhes e os menus. */
+.dark [data-workspace-area="conversation"]:not(:has([data-timeline-row-kind])) :not(:is([data-slot="composer-host"], [data-thread-details-card], [data-slot$="-popup"]), :is([data-slot="composer-host"], [data-thread-details-card], [data-slot$="-popup"]) *) {
+  &, &::before, &::after { background: transparent !important; }
+}.dark [data-workspace-area="conversation"] .messages-timeline-scroll { background: transparent !important; }
 .dark .chat-markdown { text-shadow: 0 1px 2px rgba(0,0,0,.95); }
 
 .dark [data-chat-header] {
