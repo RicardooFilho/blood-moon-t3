@@ -1,0 +1,33 @@
+{
+  "canvas": "#070405",
+  "accent": "#ff1f3d",
+  "colors": {
+    "accentForeground": "#ffffff",
+    "sidebar": "#050203",
+    "border": "#5a1420",
+    "sidebarBorder": "#4a1019",
+    "focus": "#ff1f3d",
+    "sidebarRowSelected": "#3a0c16",
+    "sidebarRowActive": "#2c0910",
+    "sidebarRowHover": "#1c070c",
+    "text": "#ffe9ec",
+    "textMuted": "#c4939b",
+    "iconMuted": "#e0505f",
+    "codeBackground": "#0c0507",
+    "codeForeground": "#ffb3bd",
+    "messageSurface": "#2a0a10",
+    "messageForeground": "#ffe9ec",
+    "terminalBackground": "#060304",
+    "terminalForeground": "#ffc2ca",
+    "terminalCursor": "#ff1f3d",
+    "terminalSelection": "#5a1420",
+    "terminalScrollbar": "#5a1420",
+    "terminalScrollbarHover": "#ff1f3d",
+    "searchMatchBackground": "#5a1420",
+    "searchMatchActiveBackground": "#ff1f3d",
+    "searchMatchActiveForeground": "#ffffff",
+    "sidebarForeground": "#ffe4e8",
+    "sidebarMutedForeground": "#b0606c",
+    "placeholder": "#8a3a46"
+  }
+}
